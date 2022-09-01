@@ -24,5 +24,41 @@ var classOffsetBB = { // Class offset stuff for Blue Burst
 
 function calculate()
 {
-  alert("not ready yet lol");
+  // Find version and attempt to calculate for that version (if differences between these versions even exist...)
+  var gameVersion = document.getElementById("playerVersion").value;
+  if (gameVersion == "BB")
+  {
+    calculateForBB();
+  } elseif (gameVersion == "DCv1")
+  {
+   calculateForDCv1(); 
+  } elseif (gameVersion == "DCv2")
+  {
+   calculateForDCv2(); 
+  } elseif (gameVersion == "EP1&2")
+  {
+   calculateForGCXBOX(); 
+  } else {
+    document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
+  }
+}
+
+function calculateForBB()
+{
+  
+}
+
+function calculateForDCv1()
+{
+  
+}
+
+function calculateForDCv2()
+{
+  
+}
+
+function calculateForGCXBOX()
+{
+  
 }
