@@ -22,6 +22,19 @@ var classOffsetBB = { // Class offset stuff for Blue Burst
   "FOnewearl": "3"
 }
 
+var sectionsBB = {
+  "0": "Viridia",
+  "1": "Greenill",
+  "2": "Skyly",
+  "3": "Bluefull",
+  "4": "Purplenum",
+  "5": "Pinkal",
+  "6": "Redria",
+  "7": "Oran",
+  "8": "Yellowboze",
+  "9": "Whitill"
+}
+
 function calculate()
 {
   // Find version and attempt to calculate for that version (if differences between these versions even exist...)
