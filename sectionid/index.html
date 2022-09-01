@@ -5,8 +5,30 @@
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-  <div id="mainProgram">
-    <h1>Not ready yet.</h1>
+  <div id="mainProgram" align="center">
+    <h1>PSO Section ID Calculator</h1>
+    <div id="versionSelect">
+      <label for="playerVersion">Version:</label>
+      <select id="playerVersion" onChange="calculate();">
+        <option value="DCv1" disabled="disabled">DC (v1)</option>
+        <option value="DCv2" disabled="disabled">DC (v2)</option>
+        <option value="EP1&2" disabled="disabled">Gamecube/XBOX</option>
+        <option value="BB" disabled="disabled">Blue Burst</option>
+      </select>
+    </div>
+    <div>
+      <label for="playerClass">Class:</label>
+      <select id="playerClass" onChange="calculate();">
+        <option value="None">Unspecified</option>
+        <!-- Other options to be implemented. -->
+      </select>
+    </div>
+    <div>
+      <input type="text" id="playerName" maxLength="9" placeholder="Name" onInput="calculate();">
+    </div>
+    <div id="outputDiv">
+      <p id="output"></p>
+    </div>
   </div>
 </body>
 </html>
