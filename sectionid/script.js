@@ -58,20 +58,20 @@ function calculate()
 
 function calculateForBB()
 {
-  
+  document.getElementById("output").innerHTML = "Blue Burst selected. This will be removed when done.";
 }
 
 function calculateForDCv1()
 {
-  
+  document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
 }
 
 function calculateForDCv2()
 {
-  
+  document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
 }
 
 function calculateForGCXBOX()
 {
-  
+  document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
 }
