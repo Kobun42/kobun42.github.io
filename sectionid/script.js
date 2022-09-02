@@ -160,15 +160,9 @@ function calculate()
   if (gameVersion == "BB")
   {
     calculateForBB();
-  } else if (gameVersion == "DCv1")
+  } else if (gameVersion == "NonBB")
   {
-   calculateForDCv1(); 
-  } else if (gameVersion == "DCv2")
-  {
-   calculateForDCv2(); 
-  } else if (gameVersion == "EP1&2")
-  {
-   calculateForGCXBOX(); 
+   calculateForNonBB(); 
   } else {
     document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
   }
@@ -200,17 +194,26 @@ function calculateForBB()
   }
 }
 
-function calculateForDCv1()
+function calculateForNonBB()
 {
-  document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
-}
-
-function calculateForDCv2()
-{
-  document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
-}
-
-function calculateForGCXBOX()
-{
-  document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
+  var charName = document.getElementById("playerName").value;
+  var charClass = document.getElementById("playerClass").value;
+  if (charName.length == 0)
+  {
+    document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
+  } else {
+    var charNameArray = charName.split("");
+    var charNameArrayLen = charNameArray.length;
+    var total = 0;
+    for (i = 0; i < charNameArrayLen; i++)
+    {
+      var currentLetter = charNameArray[i];
+      total += +BBkeys[currentLetter];
+    }
+    var totalValue = +total;
+    var totalS = ''+totalValue;
+    var result = totalS.slice(-1);
+    var yourSectionID = sectionsBB[result];
+    document.getElementById('output').innerHTML = "Your character is likely to be a <colorElement style='color:" + sectionColors[yourSectionID] + "'>" + yourSectionID + "</colorElement>!";
+  }
 }
