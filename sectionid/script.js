@@ -157,11 +157,14 @@ function calculate()
 {
   // Find version and attempt to calculate for that version (if differences between these versions even exist...)
   var gameVersion = document.getElementById("playerVersion").value;
+  var classOption = document.getElementById("playerClass");
   if (gameVersion == "BB")
   {
+    classOption.disabled = false; // Classes actually do something in this case.
     calculateForBB();
   } else if (gameVersion == "NonBB")
   {
+   classOption.disabled = true; // Classes are useless when calculating Non-BB Section IDs.
    calculateForNonBB(); 
   } else {
     document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
