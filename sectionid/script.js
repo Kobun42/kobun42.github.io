@@ -42,13 +42,13 @@ function calculate()
   if (gameVersion == "BB")
   {
     calculateForBB();
-  } elseif (gameVersion == "DCv1")
+  } else if (gameVersion == "DCv1")
   {
    calculateForDCv1(); 
-  } elseif (gameVersion == "DCv2")
+  } else if (gameVersion == "DCv2")
   {
    calculateForDCv2(); 
-  } elseif (gameVersion == "EP1&2")
+  } else if (gameVersion == "EP1&2")
   {
    calculateForGCXBOX(); 
   } else {
