@@ -1,5 +1,20 @@
 // Section ID calculator script portion
 
+// General Vars
+
+var sectionColors = {
+  "Viridia": "#40826D",
+  "Greenill": "#007610",
+  "Skyly": "#00D1FF",
+  "Bluefull": "#001BFF",
+  "Purplenum": "#AA00FF",
+  "Pinkal": "#FE7FFC",
+  "Redria": "#FF0000",
+  "Oran": "#FF9E00",
+  "Yellowboze": "#FFFB00",
+  "Whitill": "#9C9998" // More grey rather than white because... white background. lol. 
+}
+
 // Blue Burst Vars
 
 var classOffsetBB = { // Class offset stuff for Blue Burst
@@ -181,7 +196,7 @@ function calculateForBB()
     var totalS = ''+totalValue;
     var result = totalS.slice(-1);
     var yourSectionID = sectionsBB[result];
-    document.getElementById('output').innerHTML = "Your character is likely to be a " + yourSectionID + "!";
+    document.getElementById('output').innerHTML = "Your character is likely to be a <colorElement style='color:" + sectionColors[yourSectionID] + "'>" + yourSectionID + "</colorElement>!";
   }
 }
 
