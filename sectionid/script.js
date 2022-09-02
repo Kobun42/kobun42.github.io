@@ -181,7 +181,7 @@ function calculateForBB()
     var totalS = ''+totalValue;
     var result = totalS.slice(-1);
     var yourSectionID = sectionsBB[result];
-    document.getElementById('output').innerHTML = "Your character is likely to be a " + yourSectionId + "!";
+    document.getElementById('output').innerHTML = "Your character is likely to be a " + yourSectionID + "!";
   }
 }
 
