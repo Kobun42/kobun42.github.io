@@ -153,6 +153,20 @@ var BBkeys = {
 	";": "9"
 }
 
+function doOnLoad()
+{
+  // A bit unnecessary but here to avoid any potential confusion when the page loads.
+  var gameVersion = document.getElementById("playerVersion").value;
+  var classOption = document.getElementById("playerClass");
+  if (gameVersion == "BB")
+  {
+    classOption.disabled = false; // Classes actually do something in this case.
+  } else if (gameVersion == "NonBB")
+  {
+   classOption.disabled = true; // Classes are useless when calculating Non-BB Section IDs.
+  }
+}
+
 function calculate()
 {
   // Find version and attempt to calculate for that version (if differences between these versions even exist...)
