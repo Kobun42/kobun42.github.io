@@ -187,8 +187,10 @@ function calculate()
       total += +BBkeys[currentLetter];
     }
     if (gameVersion == "BB") {
+	document.getElementById("playerClass").disabled = false;
         var totalValue = +total + +offset;
     } else { 
+	document.getElementById("playerClass").disabled = true;
 	var totalValue = +total;    
     }
     var totalS = ''+totalValue;
