@@ -173,6 +173,13 @@ function calculate()
   var gameVersion = document.getElementById("playerVersion").value;
   var charName = document.getElementById("playerName").value;
   var charClass = document.getElementById("playerClass").value;
+	
+  if (gameVersion == "BB") {
+      document.getElementById("playerClass").disabled = false;
+  } else { 
+      document.getElementById("playerClass").disabled = true;
+  }
+	
   if (charName.length == 0 || charName.length > 12)
   {
     document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
@@ -187,10 +194,8 @@ function calculate()
       total += +BBkeys[currentLetter];
     }
     if (gameVersion == "BB") {
-	document.getElementById("playerClass").disabled = false;
         var totalValue = +total + +offset;
     } else { 
-	document.getElementById("playerClass").disabled = true;
 	var totalValue = +total;    
     }
     var totalS = ''+totalValue;
