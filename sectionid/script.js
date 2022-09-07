@@ -171,23 +171,6 @@ function calculate()
 {
   // Find version and attempt to calculate for that version (if differences between these versions even exist...)
   var gameVersion = document.getElementById("playerVersion").value;
-  var classOption = document.getElementById("playerClass");
-  if (gameVersion == "BB")
-  {
-    classOption.disabled = false; // Classes actually do something in this case.
-    calculateForBB();
-  } else if (gameVersion == "NonBB")
-  {
-   classOption.disabled = true; // Classes are useless when calculating Non-BB Section IDs.
-   calculateForNonBB(); 
-  } else {
-    document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
-  }
-}
-
-function calculateForBB()
-{
- // document.getElementById("output").innerHTML = "Blue Burst selected. This will be removed when done.";
   var charName = document.getElementById("playerName").value;
   var charClass = document.getElementById("playerClass").value;
   if (charName.length == 0 || charName.length > 12)
@@ -203,34 +186,14 @@ function calculateForBB()
       var currentLetter = charNameArray[i];
       total += +BBkeys[currentLetter];
     }
-    var totalValue = +total + +offset;
-    var totalS = ''+totalValue;
-    var result = totalS.slice(-1);
-    var yourSectionID = sectionsBB[result];
-    document.getElementById('output').innerHTML = "Your character is likely to be a <colorElement style='color:" + sectionColors[yourSectionID] + "'>" + yourSectionID + "</colorElement>!";
-  }
-}
-
-function calculateForNonBB()
-{
-  var charName = document.getElementById("playerName").value;
-  var charClass = document.getElementById("playerClass").value;
-  if (charName.length == 0 || charName.length > 12)
-  {
-    document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
-  } else {
-    var charNameArray = charName.split("");
-    var charNameArrayLen = charNameArray.length;
-    var total = 0;
-    for (i = 0; i < charNameArrayLen; i++)
-    {
-      var currentLetter = charNameArray[i];
-      total += +BBkeys[currentLetter];
+    if (gameVersion == "BB") {
+        var totalValue = +total + +offset;
+    } else { 
+	var totalValue = +total;    
     }
-    var totalValue = +total;
     var totalS = ''+totalValue;
     var result = totalS.slice(-1);
     var yourSectionID = sectionsBB[result];
     document.getElementById('output').innerHTML = "Your character is likely to be a <colorElement style='color:" + sectionColors[yourSectionID] + "'>" + yourSectionID + "</colorElement>!";
-  }
+  }	  
 }
