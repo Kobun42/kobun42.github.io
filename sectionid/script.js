@@ -190,7 +190,7 @@ function calculateForBB()
  // document.getElementById("output").innerHTML = "Blue Burst selected. This will be removed when done.";
   var charName = document.getElementById("playerName").value;
   var charClass = document.getElementById("playerClass").value;
-  if (charName.length == 0)
+  if (charName.length == 0 || charName.length > 12)
   {
     document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
   } else {
@@ -215,7 +215,7 @@ function calculateForNonBB()
 {
   var charName = document.getElementById("playerName").value;
   var charClass = document.getElementById("playerClass").value;
-  if (charName.length == 0)
+  if (charName.length == 0 || charName.length > 12)
   {
     document.getElementById("output").innerHTML = "A section ID cannot be generated with the data provided.";
   } else {
